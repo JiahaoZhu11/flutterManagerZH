@@ -108,8 +108,8 @@ then
     echo "包名非法，已自动生成随机包名：$packageName"
     fi
   else
-    mv "$(dirname "$0")/packages/$1" "$(dirname "$0")/packages/current"
     packageName="${packages[0]}"
+    mv "$(dirname "$0")/packages/$packageName" "$(dirname "$0")/packages/current"
   fi
   echo "$packageName" > "$(dirname "$0")/.config/package_in_use"
   echo "已将 $packageName 设为当前使用的包"
